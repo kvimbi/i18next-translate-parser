@@ -9,9 +9,9 @@ Usage:
 yarn
 
 ## Run
-- using node - node staticParser.js [options]
-- using yarn - yarn start [options]
-- using node - node start [options]
+- using node - node staticParser.js source_path [options]
+- using yarn - yarn start source_path [options]
+- using node - node start source_path [options]
 
 ## Help
  yarn start -help
