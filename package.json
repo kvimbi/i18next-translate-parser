@@ -1,9 +1,12 @@
 {
-  "name": "i18nextreceiver",
+  "license": "MIT",
+  "name": "i18next-parser",
+  "author": "kvimbi",
+  "main": "staticParser.js",
   "version": "0.0.1",
-  "private": true,
+  "private": false,
   "scripts": {
-    "start": "node ./app.js"
+    "start": "node ./staticParser.js"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
