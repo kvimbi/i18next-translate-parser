@@ -37,7 +37,7 @@ const [searchPath] = argv._;
 const { l, o, f } = argv;
 
 const langList = l.split(',');
-const outPath = o.endsWith('/') ? o.substr(0, o.length) : o;
+const outPath = o.endsWith('/') ? o.substr(0, o.length - 1) : o;
 const fileName = f.startsWith('/') ? f.substring(1) : f;
 
 // load translation files
@@ -91,6 +91,10 @@ const files = glob.sync(
 );
 
 files.forEach(file => {
+  if (fs.lstatSync(file).isDirectory()) {
+    return;
+  }
+
   const resList = parseFile(file);
   resList.forEach(res => {
     const { full, key, index } = res;
