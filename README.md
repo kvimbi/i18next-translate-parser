@@ -3,7 +3,12 @@
 Simple script for extracting keys for translation from js sources.
 Scripts itereates over sources extracts keys for translation and saves them to resource json file.
 
-Usage:
+## Download
+Using git:
+
+`git clone https://github.com/kvimbi/i18next-translate-parser.git .`
+
+Or download and unpack zip file
 
 ## Install dependencies
 yarn
