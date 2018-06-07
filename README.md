@@ -14,7 +14,7 @@ Or download and unpack zip file
 yarn
 
 ## Run
-- using node - node staticParser.js source_path [options]
+- using node - node index.js source_path [options]
 - using yarn - yarn start source_path [options]
 - using node - node start source_path [options]
 

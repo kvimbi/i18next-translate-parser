@@ -1,14 +1,22 @@
 {
   "license": "MIT",
   "name": "i18next-translate-parser",
-  "author": "kvimbi",
-  "main": "staticParser.js",
-  "version": "0.0.1",
+  "author": "Tomas Michalek",
+  "version": "0.0.2",
+  "description": "Simple script for extracting keys for translation from js sources",
   "private": false,
   "scripts": {
-    "start": "node ./staticParser.js"
+    "extract": "node ./staticParser.js"
   },
-  "dependencies": {
+  "files": [
+    "index.js"
+  ],
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kvimbi/i18next-translate-parser.git"
+  },
+  "devDependencies": {
     "body-parser": "^1.18.3",
     "express": "~4.16.3",
     "glob": "^7.1.2",
