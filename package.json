@@ -2,15 +2,21 @@
   "license": "MIT",
   "name": "i18next-translate-parser",
   "author": "Tomas Michalek",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Simple script for extracting keys for translation from js sources",
   "private": false,
   "scripts": {
-    "extract": "node ./staticParser.js"
+    "run": "node ./index.js"
   },
   "files": [
     "index.js"
   ],
+  "bin": {
+    "update-translations": "./index.js"
+  },
+  "engines": {
+    "node": ">=7.0.0"
+  },
   "main": "main.js",
   "repository": {
     "type": "git",
