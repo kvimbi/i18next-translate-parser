@@ -15,6 +15,11 @@ const yargs = require('yargs')
     type: 'string',
     required: true,
   })
+  .option('defaultValue', {
+    describe: 'defaultValue to use for newly created entries. If not provided key defaultValue is used',
+    alias: ['v'],
+    type: 'string',
+  })
   .option('file_name', {
     describe: 'filename for translation',
     alias: ['f', 'fileName'],
@@ -34,11 +39,12 @@ if (!argv._ || !argv._.length) {
 }
 
 const [searchPath] = argv._;
-const { l, o, f } = argv;
+const { l, o, f, v } = argv;
 
 const langList = l.split(',');
 const outPath = o.endsWith('/') ? o.substr(0, o.length - 1) : o;
 const fileName = f.startsWith('/') ? f.substring(1) : f;
+const defaultValue = v;
 
 // load translation files
 
@@ -84,6 +90,17 @@ function parseFile(file) {
   return ret;
 }
 
+function getValue(defaultValue, key) {
+  if (defaultValue === undefined) {
+    return key;
+  }
+  if (defaultValue.trim() === 'null') {
+    return null;
+  }
+
+  return defaultValue;
+}
+
 let translations = loadTranslations(langList, outPath, fileName);
 
 const files = glob.sync(
@@ -99,8 +116,8 @@ files.forEach(file => {
   resList.forEach(res => {
     const { full, key, index } = res;
     langList.forEach(lang => {
-      if (!translations[lang][key]) {
-        translations[lang][key] = key;
+      if (translations[lang][key] === undefined) {
+        translations[lang][key] = getValue(defaultValue, key);
       }
     });
   });
