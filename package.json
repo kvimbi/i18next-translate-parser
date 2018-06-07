@@ -1,6 +1,6 @@
 {
   "license": "MIT",
-  "name": "i18next-parser",
+  "name": "i18next-translate-parser",
   "author": "kvimbi",
   "main": "staticParser.js",
   "version": "0.0.1",
